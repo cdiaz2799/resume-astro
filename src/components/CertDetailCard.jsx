@@ -1,6 +1,4 @@
-import React from "react";
 import {
-  Avatar,
   Button,
   Card,
   CardBody,
@@ -24,27 +22,31 @@ export const CertDetailCard = ({ title, issuer, summary, skills, link }) => {
             </h4>
           </div>
         </div>
-        <Button
-          radius="full"
-          size="sm"
-          as={Link}
-          href={link}
-          isExternal={true}
-          showAnchorIcon={true}
-        >
-          Validate
-        </Button>
+        {link && (
+          <Button
+            radius="full"
+            size="sm"
+            as={Link}
+            href={link}
+            isExternal={true}
+            showAnchorIcon={true}
+          >
+            Validate
+          </Button>
+        )}
       </CardHeader>
       <CardBody className="px-3 py-0">
         <p className="text-small pl-px text-default-500">{summary}</p>
-        <p className="font-semibold text-default-600 text-small">Skills:</p>
-        <div className="flex gap-2">
-          {skills.map((skill, index) => (
-            <Chip key={index} size="sm">
-              {skill}
-            </Chip>
-          ))}
-        </div>
+        <CardFooter>
+          <p className="font-semibold text-default-600 text-small">Skills:</p>
+          <div className="flex gap-2">
+            {skills.map((skill, index) => (
+              <Chip key={index} size="sm">
+                {skill}
+              </Chip>
+            ))}
+          </div>
+        </CardFooter>
       </CardBody>
     </Card>
   );

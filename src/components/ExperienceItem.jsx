@@ -1,6 +1,5 @@
-import Markdown from "react-markdown";
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
-export default function Experience({ workExperience, fade_delay }) {
+export default function Experience({ workExperience }) {
   return (
     <Accordion selectionMode="multiple" variant="splitted">
       {workExperience.map((item, index) => (

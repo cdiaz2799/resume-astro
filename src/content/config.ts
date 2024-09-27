@@ -1,6 +1,4 @@
-import { image } from "@nextui-org/react";
 import { z, defineCollection } from "astro:content";
-import { title } from "framer-motion/client";
 
 const bio = defineCollection({
   type: "content",

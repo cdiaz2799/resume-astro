@@ -1,7 +1,6 @@
 ---
 import BlurFade from "@ui/blur-fade";
 import Experience from "@/components/ExperienceItem";
-import { Accordion } from "@nextui-org/accordion";
 interface Props {
   fade_delay: number;
   workExperience: any;
@@ -15,10 +14,6 @@ const { fade_delay, workExperience } = Astro.props;
   </BlurFade>
   <br />
   <BlurFade client:visible delay={fade_delay * 6}>
-    <Experience
-      client:load
-      workExperience={workExperience}
-      fade_delay={fade_delay * 7}
-    />
+    <Experience client:load workExperience={workExperience} />
   </BlurFade>
 </section>
