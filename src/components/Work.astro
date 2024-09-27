@@ -15,6 +15,10 @@ const { fade_delay, workExperience } = Astro.props;
   </BlurFade>
   <br />
   <BlurFade client:visible delay={fade_delay * 6}>
-    <Experience client:load workExperience={workExperience} />
+    <Experience
+      client:load
+      workExperience={workExperience}
+      fade_delay={fade_delay * 7}
+    />
   </BlurFade>
 </section>

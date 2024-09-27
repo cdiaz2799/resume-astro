@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
-export default function Experience({ workExperience }) {
+export default function Experience({ workExperience, fade_delay }) {
   return (
     <Accordion selectionMode="multiple" variant="splitted">
       {workExperience.map((item, index) => (
@@ -24,10 +24,18 @@ export default function Experience({ workExperience }) {
           title={item.data.company}
           subtitle={item.data.title}
         >
-          <p>{item.data.summary}</p>
-          {/* <p>
+          <div className="flex min-h-0 flex-col gap-y-3">
+            <p>
+              <span>
+                {item.data.startDate} - {item.data.endDate}
+              </span>
+              <span>{item.data.location}</span>
+            </p>
+            <p>{item.data.summary}</p>
+            {/* <p>
             <Markdown>{item.body}</Markdown>
           </p> */}
+          </div>
         </AccordionItem>
       ))}
     </Accordion>

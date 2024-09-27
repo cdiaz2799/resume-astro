@@ -1,0 +1,20 @@
+---
+import BlurFade from "@ui/blur-fade";
+import EducationCards from "@/components/Education";
+import { Accordion } from "@nextui-org/accordion";
+interface Props {
+  fade_delay: number;
+  education_items: any;
+}
+const { fade_delay, education_items } = Astro.props;
+---
+
+<section id="education">
+  <BlurFade client:visible delay={fade_delay * 8}>
+    <h2 class="text-xl font-bold">Education</h2>
+  </BlurFade>
+  <br />
+  <BlurFade client:visible delay={fade_delay * 9}>
+    <EducationCards client:load education_items={education_items} />
+  </BlurFade>
+</section>
