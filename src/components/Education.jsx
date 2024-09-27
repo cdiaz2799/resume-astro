@@ -1,7 +1,11 @@
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
 export default function EducationCards({ education_items }) {
   return (
-    <Accordion selectionMode="multiple" variant="splitted">
+    <Accordion
+      selectionMode="multiple"
+      variant="splitted"
+      defaultExpandedKeys={["0"]}
+    >
       {education_items.map((item, index) => (
         <AccordionItem
           key={index}

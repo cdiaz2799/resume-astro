@@ -1,6 +1,6 @@
 ---
 school: Grand Canyon University
-major: Information Technology
+major: Bachelor of Science in Information Technology
 location: Phoenix, AZ
 logo: ./gcu.png
 summary: Emphasis in Cybersecurity

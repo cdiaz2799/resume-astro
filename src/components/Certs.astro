@@ -15,9 +15,31 @@ const { fade_delay, certifications } = Astro.props;
   </BlurFade>
   <br />
   <BlurFade client:visible delay={fade_delay * 11}>
-    <CertCard client:visible certs={certifications} />
-    <!-- <div class="gap-2 grid grid-cols-2 items-center">
-      {certifications.map((cert, index) => <CertCard client:visible />)}
-    </div> -->
+    <div class="gap-2 grid grid-cols-1 sm:grid-cols-3">
+      {
+        certifications.map(
+          (cert: {
+            data: {
+              title: string;
+              issuer: string;
+              logo: { src: string };
+              skills: string;
+              validationLink: string;
+            };
+            body: any;
+          }) => (
+            <CertCard
+              client:visible
+              title={cert.data.title}
+              issuer={cert.data.issuer}
+              logo={cert.data.logo.src}
+              skills={cert.data.skills}
+              body={cert.body}
+              validationLink={cert.data.validationLink}
+            />
+          ),
+        )
+      }
+    </div>
   </BlurFade>
 </section>
