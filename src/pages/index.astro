@@ -3,6 +3,9 @@ import Base from "@/layouts/Base.astro";
 import Intro from "@/components/Intro.astro";
 import About from "@/components/About.astro";
 import { getEntry } from "astro:content";
+import Work from "@/components/Work.astro";
+import { getCollection } from "astro:content";
+import { data } from "framer-motion/client";
 
 const name = "Christian Diaz";
 const titles = [
@@ -11,6 +14,9 @@ const titles = [
   "DevOps Engineer.",
 ];
 const bio = await getEntry("bio", "main");
+const workExperience = (await getCollection("experience")).sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder
+);
 const fade_delay = 0.2;
 ---
 
@@ -19,5 +25,7 @@ const fade_delay = 0.2;
     <Intro name={name} titles={titles} fade_delay={fade_delay} />
     <br />
     <About summary={bio.body} fade_delay={fade_delay} />
+    <br />
+    <Work fade_delay={fade_delay} workExperience={workExperience} />
   </main>
 </Base>

@@ -1,3 +1,4 @@
+import { image } from "@nextui-org/react";
 import { z, defineCollection } from "astro:content";
 
 const bio = defineCollection({
@@ -6,17 +7,19 @@ const bio = defineCollection({
 });
 
 const experience = defineCollection({
-  type: "data",
-  schema: z.object({
-    title: z.string(),
-    company: z.string(),
-    startDate: z.string(),
-    endDate: z.string().optional(),
-    location: z.string(),
-    summary: z.string(),
-    responsibilities: z.array(z.string()),
-    technologies: z.array(z.string()).optional(),
-  }),
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      sortOrder: z.number(),
+      title: z.string(),
+      company: z.string(),
+      companyLogo: image().optional(),
+      startDate: z.string(),
+      endDate: z.string().optional(),
+      location: z.string(),
+      summary: z.string(),
+      technologies: z.array(z.string()).optional(),
+    }),
 });
 
 export const collections = {
