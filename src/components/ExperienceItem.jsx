@@ -28,12 +28,8 @@ export default function Experience({ workExperience }) {
               <span>
                 {item.data.startDate} - {item.data.endDate}
               </span>
-              <span>{item.data.location}</span>
             </p>
             <p>{item.data.summary}</p>
-            {/* <p>
-            <Markdown>{item.body}</Markdown>
-          </p> */}
           </div>
         </AccordionItem>
       ))}

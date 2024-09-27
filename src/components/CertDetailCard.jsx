@@ -38,8 +38,7 @@ export const CertDetailCard = ({ title, issuer, summary, skills, link }) => {
       <CardBody className="px-3 py-0">
         <p className="text-small pl-px text-default-500">{summary}</p>
         <CardFooter>
-          <p className="font-semibold text-default-600 text-small">Skills:</p>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {skills.map((skill, index) => (
               <Chip key={index} size="sm">
                 {skill}
