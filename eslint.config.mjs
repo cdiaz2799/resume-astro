@@ -4,5 +4,6 @@ export default [
   {
     files: ["src/**/*.{js,jsx,tsx,mjs,astro}"],
     ignores: ["src/components/ui/*"],
+    rules: {},
   },
 ];

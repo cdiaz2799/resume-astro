@@ -5,8 +5,8 @@ import {
   AnimatePresence,
   motion,
   useInView,
-  UseInViewOptions,
-  Variants,
+  type UseInViewOptions,
+  type Variants,
 } from "framer-motion";
 
 type MarginType = UseInViewOptions["margin"];

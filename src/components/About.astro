@@ -1,34 +1,21 @@
 ---
-import BlurFade from "@ui/blur-fade";
-import WordRotate from "@ui/word-rotate";
-import Emoji from "astro-emoji";
+import BlurFade from "./ui/blur-fade";
 interface Props {
-  name: string;
-  titles: string[];
+  summary: any;
+  fade_delay: number;
 }
-const { name, titles } = Astro.props;
+const { summary, fade_delay } = Astro.props;
 ---
 
-<section id="hero">
-  <div class="mx-auto w-full max-w-2xl space-y-8">
-    <div class="gap-2 flex justify-between">
-      <div class="flex-col flex flex-1 space-y-1.5">
-        <!-- <BlurFade client:visible delay={0.25} inView> -->
-        <span
-          class="text-3xl text-pretty font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-        >
-          Hi, I&apos;m {name}
-          <Emoji symbol="👋" label="wave" />
-        </span>
-        <!-- </BlurFade>
-        <BlurFade client:visible delay={0.25 * 2} inView> -->
-        <span
-          class="text-xl text-pretty tracking-tighter sm:text-3xl xl:text-4xl/none"
-        >
-          <WordRotate client:visible words={titles} duration={2000} />
-        </span>
-        <!-- </BlurFade> -->
-      </div>
-    </div>
-  </div>
+<section id="about">
+  <BlurFade client:visible delay={fade_delay * 3}>
+    <h2 class="text-xl font-bold">About</h2>
+  </BlurFade>
+  <BlurFade client:visible delay={fade_delay * 4}>
+    <p
+      class="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
+    >
+      {summary}
+    </p>
+  </BlurFade>
 </section>
