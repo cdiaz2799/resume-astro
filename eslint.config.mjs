@@ -3,6 +3,6 @@ export default [
   ...eslintPluginAstro.configs.recommended,
   {
     files: ["src/**/*.{js,jsx,tsx,mjs,astro}"],
-    rules: {}
+    ignores: ["src/components/ui/*"],
   },
 ];

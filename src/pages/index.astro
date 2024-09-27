@@ -2,6 +2,15 @@
 import "@/globals.css";
 import Base from "@/layouts/Base.astro";
 import About from "@/components/About.astro";
+
+const name = "Christian Diaz";
+const titles = [
+  "Site Reliability Engineer.",
+  "Cloud Engineer.",
+  "DevOps Engineer.",
+];
 ---
 
-<Base> <About name="Christian Diaz" titles={["SRE."]} /> </Base>
+<Base title=`${name} | Resume`>
+  <About name={name} titles={titles} />
+</Base>
