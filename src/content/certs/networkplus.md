@@ -1,6 +1,6 @@
 ---
 title: Network+
-issuer: CompTIA'
+issuer: CompTIA
 issued: 2020-01-21
 logo: ./network-ce.png
 skills: [
@@ -23,4 +23,4 @@ skills: [
   "Wireless Technologies"
 ]
 ---
-Earners of the CompTIA Network+ certification have the skills needed to troubleshoot, configure, and manage wired and wireless networks found in companies around the world. CompTIA Network+ professionals have demonstrated the ability to design and implement functional networks, configure, manage, and maintain essential network devices, implement network security, and troubleshoot network problems.
+CompTIA Network+ professionals have demonstrated the ability to design and implement functional networks, configure, manage, and maintain essential network devices, implement network security, and troubleshoot network problems.

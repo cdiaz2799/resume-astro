@@ -1,6 +1,6 @@
 ---
 title: Security+
-issuer: CompTIA'
+issuer: CompTIA
 issued: 2021-04-13
 logo: ./security-ce.png
 skills: [
@@ -22,4 +22,4 @@ skills: [
   "Threat Management"
 ]
 ---
-Earners of the CompTIA Security+ certification have the knowledge and skills necessary to perform core security functions required of any cybersecurity role. CompTIA Security+ professionals know how to identify and address potential threats, attacks and vulnerabilities and they have established techniques in risk management, risk mitigation, threat management and intrusion detection.
+CompTIA Security+ professionals know how to identify and address potential threats, attacks and vulnerabilities and they have established techniques in risk management, risk mitigation, threat management and intrusion detection.

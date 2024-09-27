@@ -1,6 +1,6 @@
 ---
 title: A+
-issuer: CompTIA'
+issuer: CompTIA
 issued: 2019-07-09
 logo: ./a-ce.png
 skills: [
@@ -22,4 +22,4 @@ skills: [
 ]
 validationLink: https://www.credly.com/badges/cd3f0843-e47e-453e-96cb-818b35039d96/public_url
 ---
-Earners of the CompTIA A+ certification are proven problem solvers who are able to perform critical IT support tasks including device configuration, data backup and recovery, and operating system configuration. CompTIA A+ certified professionals have demonstrated baseline security skills for IT support roles and are able to detect and remove malware, address privacy concerns, and troubleshoot core service challenges.
+CompTIA A+ certified professionals have demonstrated baseline security skills for IT support roles and are able to detect and remove malware, address privacy concerns, and troubleshoot core service challenges.
