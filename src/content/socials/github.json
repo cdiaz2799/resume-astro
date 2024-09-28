@@ -1,0 +1,6 @@
+{
+  "$schema": "../../../.astro/collections/socials.schema.json",
+  "name": "GitHub",
+  "link": "https://github.com/cdiaz2799",
+  "icon": "GitHubLogoIcon"
+}

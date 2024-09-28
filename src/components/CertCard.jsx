@@ -6,13 +6,9 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  Badge,
   Chip,
-  Divider,
-  Progress,
 } from "@nextui-org/react";
 import { CertDetailCard } from "@/components/CertDetailCard";
-
 export default function CertCard({
   title,
   logo,

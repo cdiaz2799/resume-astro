@@ -31,7 +31,7 @@ const { fade_delay, certifications } = Astro.props;
             body: string;
           }) => (
             <CertCard
-              client:visible
+              client:load
               title={cert.data.title}
               issuer={cert.data.issuer}
               logo={cert.data.logo.src}

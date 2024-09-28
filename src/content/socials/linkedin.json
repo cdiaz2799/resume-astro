@@ -1,0 +1,6 @@
+{
+  "$schema": "../../../.astro/collections/socials.schema.json",
+  "name": "LinkedIn",
+  "link": "https://www.linkedin.com/in/christian-diaz26/",
+  "icon": "LinkedInLogoIcon"
+}

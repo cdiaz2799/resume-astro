@@ -48,9 +48,19 @@ const certs = defineCollection({
     }),
 });
 
+const socials = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    link: z.string(),
+    icon: z.string().optional(), // https://www.radix-ui.com/icons
+  }),
+});
+
 export const collections = {
   bio: bio,
   experience: experience,
   education: education,
   certs: certs,
+  socials: socials,
 };
