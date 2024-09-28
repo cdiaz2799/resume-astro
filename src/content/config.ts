@@ -57,10 +57,27 @@ const socials = defineCollection({
   }),
 });
 
+const skills = defineCollection({
+  type: "data",
+  schema: z.object({
+    groups: z.array(
+      z.object({
+        name: z.string(),
+        skills: z.array(
+          z.object({
+            name: z.string(),
+          }),
+        ),
+      }),
+    ),
+  }),
+});
+
 export const collections = {
   bio: bio,
   experience: experience,
   education: education,
   certs: certs,
   socials: socials,
+  skills: skills,
 };

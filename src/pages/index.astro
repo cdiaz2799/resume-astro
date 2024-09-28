@@ -4,6 +4,7 @@ import Intro from "@/components/Intro.astro";
 import About from "@/components/About.astro";
 import Education from "@/components/Education.astro";
 import Certs from "@/components/Certs.astro";
+import Skills from "@/components/Skills.astro";
 import { getEntry } from "astro:content";
 import Work from "@/components/Work.astro";
 import { getCollection } from "astro:content";
@@ -16,7 +17,7 @@ const titles = [
 ];
 const bio = await getEntry("bio", "main");
 const workExperience = (await getCollection("experience")).sort(
-  (a, b) => a.data.sortOrder - b.data.sortOrder,
+  (a, b) => a.data.sortOrder - b.data.sortOrder
 );
 const education = await getCollection("education");
 const certifications = (await getCollection("certs")).sort((a, b) => {
@@ -44,5 +45,7 @@ const fade_delay = 0.2;
     <Education education_items={education} fade_delay={fade_delay} />
     <br />
     <Certs certifications={certifications} fade_delay={fade_delay} />
+    <br />
+    <Skills />
   </main>
 </Base>

@@ -1,0 +1,12 @@
+---
+import { getEntry } from "astro:content";
+import SkillsDisplay from "@/components/Skills";
+
+const skillsEntry = await getEntry("skills", "skills");
+const { groups } = skillsEntry.data;
+---
+
+<section class="skills-section">
+  <h2 class="text-2xl font-bold mb-4">Skills</h2>
+  <SkillsDisplay groups={groups} client:load />
+</section>

@@ -1,0 +1,39 @@
+groups:
+  - name: Programming Languages
+    skills:
+      - name: JavaScript
+        level: expert
+      - name: Python
+        level: advanced
+      - name: Java
+        level: intermediate
+      - name: C++
+        level: beginner
+  - name: Web Technologies
+    skills:
+      - name: React
+        level: expert
+      - name: Vue.js
+        level: intermediate
+      - name: Angular
+        level: beginner
+      - name: HTML5
+        level: expert
+      - name: CSS3
+        level: advanced
+  - name: Databases
+    skills:
+      - name: MongoDB
+        level: advanced
+      - name: PostgreSQL
+        level: intermediate
+      - name: MySQL
+        level: advanced
+  - name: DevOps
+    skills:
+      - name: Docker
+        level: intermediate
+      - name: Kubernetes
+        level: beginner
+      - name: AWS
+        level: intermediate
