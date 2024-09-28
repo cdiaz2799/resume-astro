@@ -51,7 +51,7 @@ export default function NavBar({ socials }) {
             {socials.map((s) => {
               const IconComponent = iconMap[s.data.icon];
               return (
-                <NavbarItem id={s.id}>
+                <NavbarItem key={s.id}>
                   <Link href={s.data.link} isExternal aria-label={s.data.name}>
                     <title>{s.data.name}</title>
                     <IconComponent />
