@@ -40,6 +40,7 @@ const certs = defineCollection({
     z.object({
       title: z.string(),
       issuer: z.string(),
+      future: z.boolean().optional(),
       issued: z.date().optional(),
       logo: image().optional(),
       skills: z.array(z.string()).optional(),

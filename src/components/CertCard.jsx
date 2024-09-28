@@ -6,6 +6,10 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
+  Badge,
+  Chip,
+  Divider,
+  Progress,
 } from "@nextui-org/react";
 import { CertDetailCard } from "@/components/CertDetailCard";
 
@@ -16,11 +20,13 @@ export default function CertCard({
   skills,
   body,
   validationLink,
+  future,
+  issued,
 }) {
   return (
     <Popover showArrow placement="top">
       <PopoverTrigger>
-        <Card shadow="sm" isPressable as="button">
+        <Card shadow="sm" isPressable as="button" isFooterBlurred>
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
@@ -31,7 +37,13 @@ export default function CertCard({
               src={logo}
             />
           </CardBody>
-          <CardFooter className="text-small justify-between">
+
+          <CardFooter className="text-xs justify-center rounded-large bottom-1 flex flex-col items-center">
+            {future && (
+              <Chip className="self-center" color="warning">
+                In Progress
+              </Chip>
+            )}
             <b>{title}</b>
             <p className="text-default-500">{issuer}</p>
           </CardFooter>
@@ -43,6 +55,7 @@ export default function CertCard({
           issuer={issuer}
           summary={body}
           skills={skills}
+          issued={issued}
           link={validationLink}
         />
       </PopoverContent>

@@ -25,8 +25,10 @@ const { fade_delay, certifications } = Astro.props;
               logo: { src: string };
               skills: string;
               validationLink: string;
+              future: boolean;
+              issued?: string;
             };
-            body: any;
+            body: string;
           }) => (
             <CertCard
               client:visible
@@ -36,8 +38,11 @@ const { fade_delay, certifications } = Astro.props;
               skills={cert.data.skills}
               body={cert.body}
               validationLink={cert.data.validationLink}
+              future={cert.data.future}
+              issued={cert.data.issued}
+              ) }
             />
-          ),
+          )
         )
       }
     </div>

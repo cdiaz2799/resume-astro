@@ -8,18 +8,31 @@ import {
   Link,
 } from "@nextui-org/react";
 
-export const CertDetailCard = ({ title, issuer, summary, skills, link }) => {
+export const CertDetailCard = ({
+  title,
+  issuer,
+  summary,
+  skills,
+  link,
+  issued,
+}) => {
   return (
     <Card shadow="none" className="max-w-[300px] border-none bg-transparent">
       <CardHeader className="justify-between">
         <div className="flex gap-3">
           <div className="flex flex-col items-start justify-center">
             <h3 className="text-small font-semibold leading-none text-default-600">
-              {issuer}
+              {issuer} {title}
             </h3>
-            <h4 className="text-small tracking-tight text-default-500">
-              {title}
-            </h4>
+            {issued && (
+              <h4 className="text-small tracking-tight text-default-500">
+                Issued:{" "}
+                {new Date(issued).toLocaleString("en-US", {
+                  month: "short",
+                  year: "numeric",
+                })}
+              </h4>
+            )}
           </div>
         </div>
         {link && (

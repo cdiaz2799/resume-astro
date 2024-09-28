@@ -16,10 +16,19 @@ const titles = [
 ];
 const bio = await getEntry("bio", "main");
 const workExperience = (await getCollection("experience")).sort(
-  (a, b) => a.data.sortOrder - b.data.sortOrder,
+  (a, b) => a.data.sortOrder - b.data.sortOrder
 );
 const education = await getCollection("education");
-const certifications = await getCollection("certs");
+const certifications = (await getCollection("certs")).sort((a, b) => {
+  const aDate = a.data.issued
+    ? new Date(a.data.issued)
+    : new Date("9999-12-31"); // Future date if 'issued' is missing
+  const bDate = b.data.issued
+    ? new Date(b.data.issued)
+    : new Date("9999-12-31");
+
+  return bDate - aDate; // Sort in descending order (newest first)
+});
 
 const fade_delay = 0.2;
 ---
