@@ -23,6 +23,7 @@ skills:
     "Wireless Networks",
     "Wireless Technologies",
   ]
+validationLink: https://www.credly.com/badges/8ac75450-02da-45fb-979d-6e7c79a581a8/public_url
 ---
 
 CompTIA Network+ professionals have demonstrated the ability to design and implement functional networks, configure, manage, and maintain essential network devices, implement network security, and troubleshoot network problems.

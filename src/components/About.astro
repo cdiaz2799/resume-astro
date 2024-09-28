@@ -12,9 +12,7 @@ const { summary, fade_delay } = Astro.props;
     <h2 class="text-xl font-bold">About</h2>
   </BlurFade>
   <BlurFade client:visible delay={fade_delay * 4}>
-    <p
-      class="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
-    >
+    <p class="prose max-w-full text-pretty text-sm dark:prose-invert">
       {summary}
     </p>
   </BlurFade>

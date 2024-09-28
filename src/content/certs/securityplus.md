@@ -3,6 +3,7 @@ title: Security+
 issuer: CompTIA
 issued: 2021-04-13
 logo: ./security-ce.png
+validationLink: https://www.credly.com/badges/4b4c2e30-eebb-478e-958f-2aeebf6199dc/public_url
 skills:
   [
     "Access Control",
