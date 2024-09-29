@@ -1,0 +1,5 @@
+config:
+  pulumi:template: static-website-gcp-typescript
+  resume:errorDocument: error.html
+  resume:indexDocument: index.html
+  resume:path: ./www
