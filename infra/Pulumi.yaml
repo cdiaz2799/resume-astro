@@ -1,7 +1,3 @@
 name: resume
 runtime: nodejs
 description: resume.cdiaz.cloud
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: static-website-gcp-typescript
