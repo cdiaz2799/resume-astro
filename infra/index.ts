@@ -1,13 +1,22 @@
 import * as pulumi from "@pulumi/pulumi";
-import * as gcp from "@pulumi/gcp";
-import * as synced_folder from "@pulumi/synced-folder";
+import * as cloudflare from "@pulumi/cloudflare";
 import * as github from "@pulumi/github";
 
 // Import the program's configuration settings.
 const config = new pulumi.Config();
+const org = pulumi.getOrganization();
+const project = pulumi.getProject();
+const stack = pulumi.getStack();
+
 const repo_name = config.get("repo_name") || "resume";
 const visibility = config.get("repo_visibility") || "public";
+
 const url = config.require("url");
+const cloudflareConfig = new pulumi.Config("cloudflareConfig");
+const cloudflareAccountID = cloudflareConfig.require("accountID");
+const zoneID = cloudflare
+  .getZone({ name: "cdiaz.cloud", accountId: cloudflareAccountID })
+  .then((zone) => zone.id);
 
 // Setup Repository
 const repo = new github.Repository("resume-astro", {
@@ -33,5 +42,69 @@ const repo = new github.Repository("resume-astro", {
   },
 });
 
+const defaultBranch = new github.BranchDefault(
+  "default-branch",
+  {
+    repository: repo.name,
+    branch: "main",
+  },
+  { parent: repo }
+);
 export const repositoryCloneUrl = repo.gitCloneUrl;
 export const repositorySSHUrl = repo.sshCloneUrl;
+
+// Setup Cloudflare Pages
+const pages = new cloudflare.PagesProject("cloudflare-pages", {
+  accountId: cloudflareAccountID,
+  name: "resume",
+  productionBranch: defaultBranch.branch,
+  source: {
+    type: "github",
+    config: {
+      owner: repo.fullName.apply((fullName) => fullName.split("/")[0]),
+      repoName: repo.name,
+      productionBranch: defaultBranch.branch,
+      previewBranchExcludes: [defaultBranch.branch],
+      deploymentsEnabled: true,
+      prCommentsEnabled: true,
+    },
+  },
+  buildConfig: {
+    buildCommand: "npm run build",
+    destinationDir: "dist",
+    rootDir: "./website",
+  },
+  deploymentConfigs: {
+    production: {
+      placement: {
+        mode: "smart",
+      },
+    },
+  },
+});
+
+export const pagesDomains = pages.domains;
+export const pagesSumdomain = pages.subdomain;
+
+// Setup Cloudflare Pages DNS
+const pagesDomain = new cloudflare.PagesDomain(
+  "cloudflare-pages-domain",
+  {
+    accountId: cloudflareAccountID,
+    projectName: pages.name,
+    domain: url,
+  },
+  { parent: pages, deleteBeforeReplace: true }
+);
+export const pagesDomainStatus = pagesDomain.status;
+
+const pagesDNS = new cloudflare.Record("cloudflare-pages-dns", {
+  name: url,
+  content: pagesSumdomain,
+  type: "CNAME",
+  zoneId: zoneID,
+  allowOverwrite: true,
+  proxied: true,
+  comment: `Managed by Pulumi: ${org}/${project}/${stack}`,
+});
+export const dnsFQDN = pagesDNS.hostname;
