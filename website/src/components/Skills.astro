@@ -1,12 +1,18 @@
 ---
 import { getEntry } from "astro:content";
 import SkillsDisplay from "@/components/Skills";
+import BlurFade from "@ui/blur-fade";
 
 const skillsEntry = await getEntry("skills", "skills");
 const { groups } = skillsEntry.data;
+const { fade_delay } = Astro.props;
 ---
 
 <section class="skills-section">
-  <h2 class="text-2xl font-bold mb-4">Skills</h2>
-  <SkillsDisplay groups={groups} client:load />
+  <BlurFade client:load delay={fade_delay * 12}>
+    <h2 class="text-2xl font-bold mb-4">Skills</h2>
+  </BlurFade>
+  <BlurFade client:load delay={fade_delay * 13}>
+    <SkillsDisplay groups={groups} client:load />
+  </BlurFade>
 </section>

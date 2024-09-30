@@ -14,7 +14,7 @@ const { name, titles, fade_delay } = Astro.props;
   <div class="mx-auto w-full max-w-2xl space-y-8">
     <div class="gap-2 flex justify-between">
       <div class="flex-col flex flex-1 space-y-1.5">
-        <BlurFade client:visible delay={fade_delay * 1} inView>
+        <BlurFade client:load delay={fade_delay * 1} inView>
           <span
             class="text-3xl text-pretty font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
           >
@@ -22,7 +22,7 @@ const { name, titles, fade_delay } = Astro.props;
             <Emoji symbol="👋" label="wave" />
           </span>
         </BlurFade>
-        <BlurFade client:visible delay={fade_delay * 2} inView>
+        <BlurFade client:load delay={fade_delay * 2} inView>
           <span
             class="text-xl text-pretty tracking-tighter sm:text-3xl xl:text-4xl/none"
           >

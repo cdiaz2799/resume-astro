@@ -41,7 +41,7 @@ export default function CertCard({
               </Chip>
             )}
             <b>{title}</b>
-            <p className="text-default-500">{issuer}</p>
+            <p className="text-zinc-400">{issuer}</p>
           </CardFooter>
         </Card>
       </PopoverTrigger>

@@ -1,19 +1,21 @@
 ---
 import BlurFade from "./ui/blur-fade";
+import { getEntry, render } from "astro:content";
 interface Props {
-  summary: any;
   fade_delay: number;
 }
-const { summary, fade_delay } = Astro.props;
+const { fade_delay } = Astro.props;
+const bio = await getEntry("bio", "main");
+const { Content } = await render(bio);
 ---
 
 <section id="about">
-  <BlurFade client:visible delay={fade_delay * 3}>
+  <BlurFade client:load delay={fade_delay * 3}>
     <h2 class="text-xl font-bold">About</h2>
   </BlurFade>
-  <BlurFade client:visible delay={fade_delay * 4}>
-    <p class="prose max-w-full text-pretty text-sm dark:prose-invert">
-      {summary}
-    </p>
+  <BlurFade client:load delay={fade_delay * 4}>
+    <section id="bio" class="max-w-full text-pretty">
+      <Content />
+    </section>
   </BlurFade>
 </section>

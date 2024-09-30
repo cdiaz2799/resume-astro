@@ -5,7 +5,6 @@ import About from "@/components/About.astro";
 import Education from "@/components/Education.astro";
 import Certs from "@/components/Certs.astro";
 import Skills from "@/components/Skills.astro";
-import { getEntry } from "astro:content";
 import Work from "@/components/Work.astro";
 import { getCollection } from "astro:content";
 
@@ -15,9 +14,8 @@ const titles = [
   "Cloud Engineer.",
   "DevOps Engineer.",
 ];
-const bio = await getEntry("bio", "main");
 const workExperience = (await getCollection("experience")).sort(
-  (a, b) => a.data.sortOrder - b.data.sortOrder
+  (a, b) => a.data.sortOrder - b.data.sortOrder,
 );
 const education = await getCollection("education");
 const certifications = (await getCollection("certs")).sort((a, b) => {
@@ -28,7 +26,7 @@ const certifications = (await getCollection("certs")).sort((a, b) => {
     ? new Date(b.data.issued)
     : new Date("9999-12-31");
 
-  return bDate - aDate; // Sort in descending order (newest first)
+  return bDate.getTime() - aDate.getTime();
 });
 
 const fade_delay = 0.2;
@@ -38,7 +36,7 @@ const fade_delay = 0.2;
   <main class="max-w-2xl mx-auto py-12 sm:py-24 px-6 bg-background">
     <Intro name={name} titles={titles} fade_delay={fade_delay} />
     <br />
-    <About summary={bio.body} fade_delay={fade_delay} />
+    <About fade_delay={fade_delay} />
     <br />
     <Work fade_delay={fade_delay} workExperience={workExperience} />
     <br />
@@ -46,6 +44,6 @@ const fade_delay = 0.2;
     <br />
     <Certs certifications={certifications} fade_delay={fade_delay} />
     <br />
-    <Skills />
+    <Skills fade_delay={fade_delay} />
   </main>
 </Base>

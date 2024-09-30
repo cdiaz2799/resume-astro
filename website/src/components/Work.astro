@@ -9,11 +9,11 @@ const { fade_delay, workExperience } = Astro.props;
 ---
 
 <section id="work-experience">
-  <BlurFade client:visible delay={fade_delay * 5}>
+  <BlurFade client:load delay={fade_delay * 5}>
     <h2 class="text-xl font-bold">Work Experience</h2>
   </BlurFade>
   <br />
-  <BlurFade client:visible delay={fade_delay * 6}>
+  <BlurFade client:load delay={fade_delay * 6}>
     <Experience client:load workExperience={workExperience} />
   </BlurFade>
 </section>

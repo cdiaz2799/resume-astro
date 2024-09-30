@@ -10,11 +10,11 @@ const { fade_delay, certifications } = Astro.props;
 ---
 
 <section id="certifications">
-  <BlurFade client:visible delay={fade_delay * 10}>
+  <BlurFade client:load delay={fade_delay * 10}>
     <h2 class="text-xl font-bold">Certifications</h2>
   </BlurFade>
   <br />
-  <BlurFade client:visible delay={fade_delay * 11}>
+  <BlurFade client:load delay={fade_delay * 11}>
     <div class="gap-2 grid grid-cols-1 sm:grid-cols-3">
       {
         certifications.map(

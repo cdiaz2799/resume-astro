@@ -1,39 +1,44 @@
 groups:
-  - name: Programming Languages
+  - name: Cloud Infrastructure
     skills:
-      - name: JavaScript
-        level: expert
-      - name: Python
-        level: advanced
-      - name: Java
-        level: intermediate
-      - name: C++
-        level: beginner
-  - name: Web Technologies
+      - name: Google Cloud Platform (GCP)
+      - name: Microsoft Azure
+      - name: Amazon Web Services (AWS)
+      - name: DigitalOcean
+  - name: Containers
     skills:
-      - name: React
-        level: expert
-      - name: Vue.js
-        level: intermediate
-      - name: Angular
-        level: beginner
-      - name: HTML5
-        level: expert
-      - name: CSS3
-        level: advanced
-  - name: Databases
-    skills:
-      - name: MongoDB
-        level: advanced
-      - name: PostgreSQL
-        level: intermediate
-      - name: MySQL
-        level: advanced
-  - name: DevOps
-    skills:
-      - name: Docker
-        level: intermediate
       - name: Kubernetes
-        level: beginner
-      - name: AWS
-        level: intermediate
+      - name: Google Kubernetes Engine
+      - name: Azure Kubernetes Service
+      - name: Docker
+  - name: Serverless
+    skills:
+      - name: Azure Container Apps
+      - name: GCP Cloud Run
+      - name: AWS Fargate
+  - name: IAM
+    skills:
+      - name: Okta
+      - name: Active Directory
+  - name: Infrastructure-as-Code
+    skills:
+      - name: Terraform
+      - name: Pulumi
+      - name: CloudFormation
+      - name: Ansible
+  - name: Languages
+    skills:
+      - name: Python
+      - name: Bash/Shell
+      - name: Powershell
+      - name: TypeScript
+  - name: CI/CD
+    skills:
+      - name: GitHub Actions
+      - name: Gitlab CI/CD
+      - name: Jenkins
+  - name: Observability
+    skills:
+      - name: Grafana
+      - name: Prometheus
+      - name: Datadog
