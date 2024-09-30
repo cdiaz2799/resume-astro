@@ -1,12 +1,12 @@
 {
-    "name": "resume",
-    "devDependencies": {
-        "@types/node": "^18",
-        "typescript": "^5.0.0"
-    },
-    "dependencies": {
-        "@pulumi/cloudflare": "^5.39.1",
-        "@pulumi/github": "^6.3.0",
-        "@pulumi/pulumi": "^3.113.0"
-    }
+  "name": "resume",
+  "devDependencies": {
+    "@types/node": "^18",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@pulumi/cloudflare": "^5.39.1",
+    "@pulumi/github": "^6.3.0",
+    "@pulumi/pulumi": "^3.113.0"
+  }
 }
