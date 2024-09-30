@@ -50,6 +50,35 @@ const defaultBranch = new github.BranchDefault(
   },
   { parent: repo }
 );
+
+const dependabot = new github.RepositoryDependabotSecurityUpdates(
+  "repo-dependabot",
+  {
+    repository: repo.name,
+    enabled: true,
+  },
+  { parent: repo }
+);
+
+const environment = new github.RepositoryEnvironment(
+  "repo-environment",
+  {
+    repository: repo.name,
+    environment: "cloudflare-pages",
+    preventSelfReview: false,
+  },
+  { parent: repo }
+);
+
+const environmentDeployment = new github.RepositoryDeploymentBranchPolicy(
+  "repo-deployment-branch-policy",
+  {
+    repository: repo.name,
+    environmentName: environment.environment,
+    name: defaultBranch.branch,
+  },
+  { parent: repo }
+);
 export const repositoryCloneUrl = repo.gitCloneUrl;
 export const repositorySSHUrl = repo.sshCloneUrl;
 

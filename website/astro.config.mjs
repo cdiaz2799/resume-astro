@@ -11,7 +11,12 @@ import pageInsight from "astro-page-insight";
 
 export default defineConfig({
   site: "https://resume.cdiaz.cloud",
-  integrations: [react(), tailwind({
-    applyBaseStyles: false,
-  }), sitemap(), pageInsight()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    pageInsight(),
+  ],
 });
