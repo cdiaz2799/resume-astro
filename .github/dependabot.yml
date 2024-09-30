@@ -1,6 +1,10 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
+    directory: "/website"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/infra"
     schedule:
       interval: "weekly"
