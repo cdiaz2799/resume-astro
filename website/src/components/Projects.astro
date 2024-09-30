@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import BlurFade from "@ui/blur-fade";
+import ProjectCard from "@/components/ProjectCard";
+
+const projects = await getCollection("projects");
+const { fade_delay } = Astro.props;
+---
+
+<section class="skills-section">
+  <BlurFade client:load delay={fade_delay * 14}>
+    <h2 class="text-2xl font-bold mb-4">Projects</h2>
+  </BlurFade>
+  <BlurFade client:load delay={fade_delay * 15}>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {
+        projects.map((project) => {
+          return (
+            <ProjectCard
+              client:load
+              slug={project.slug}
+              title={project.data.name}
+              subtitle={project.data.company}
+              repo={project.data.repo}
+              description={project.data.blurb}
+              tags={project.data.skills}
+              image={project.data.thumbnail?.src}
+            />
+          );
+        })
+      }
+    </div>
+  </BlurFade>
+</section>

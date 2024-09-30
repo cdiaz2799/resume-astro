@@ -6,6 +6,7 @@ import Education from "@/components/Education.astro";
 import Certs from "@/components/Certs.astro";
 import Skills from "@/components/Skills.astro";
 import Work from "@/components/Work.astro";
+import Projects from "@/components/Projects.astro";
 import { getCollection } from "astro:content";
 
 const name = "Christian Diaz";
@@ -45,5 +46,7 @@ const fade_delay = 0.2;
     <Certs certifications={certifications} fade_delay={fade_delay} />
     <br />
     <Skills fade_delay={fade_delay} />
+    <br />
+    <Projects fade_delay={fade_delay} />
   </main>
 </Base>

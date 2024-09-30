@@ -80,7 +80,8 @@ const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      link: z.string(),
+      repo: z.string(),
+      blurb: z.string(),
       skills: z.array(z.string()).optional(),
       company: z.string().optional(),
       thumbnail: image().optional(),

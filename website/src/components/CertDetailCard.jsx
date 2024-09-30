@@ -53,7 +53,7 @@ export const CertDetailCard = ({
         <CardFooter>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill, index) => (
-              <Chip key={index} size="sm">
+              <Chip key={index} size="sm" variant="shadow" color="primary">
                 {skill}
               </Chip>
             ))}

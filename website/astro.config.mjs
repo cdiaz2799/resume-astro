@@ -9,6 +9,8 @@ import sitemap from "@astrojs/sitemap";
 
 import pageInsight from "astro-page-insight";
 
+import markdownIntegration from "@astropub/md";
+
 export default defineConfig({
   site: "https://resume.cdiaz.cloud",
   integrations: [
@@ -18,5 +20,6 @@ export default defineConfig({
     }),
     sitemap(),
     pageInsight(),
+    markdownIntegration(),
   ],
 });

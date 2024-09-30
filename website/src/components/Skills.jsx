@@ -13,7 +13,10 @@ const SkillsDisplay = ({ groups }) => {
           <CardHeader className="pb-2 pt-2 px-4 flex-col items-start">
             <h3 className="font-bold text-xs">
               {group.icon && (
-                <FontAwesomeIcon className="pr-1.5" icon={group.icon} />
+                <FontAwesomeIcon
+                  className="pr-1.5 text-primary"
+                  icon={group.icon}
+                />
               )}
               {group.name}
             </h3>
