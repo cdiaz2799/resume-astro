@@ -29,7 +29,6 @@ groups:
     skills:
       - name: Terraform
       - name: Pulumi
-      - name: CloudFormation
       - name: Ansible
   - name: Languages
     icon: fa-solid fa-code-branch
@@ -38,12 +37,12 @@ groups:
       - name: Bash/Shell
       - name: Powershell
       - name: TypeScript
+        icon: IconDeviconPlainTypescript
   - name: CI/CD
     icon: fa-solid fa-infinity
     skills:
       - name: GitHub Actions
       - name: Gitlab CI/CD
-      - name: Jenkins
   - name: Observability
     icon: fa-solid fa-magnifying-glass
     skills:

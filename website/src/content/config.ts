@@ -75,6 +75,19 @@ const skills = defineCollection({
   }),
 });
 
+const projects = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      repo: z.string(),
+      blurb: z.string(),
+      skills: z.array(z.string()).optional(),
+      company: z.string().optional(),
+      thumbnail: image().optional(),
+    }),
+});
+
 export const collections = {
   bio: bio,
   experience: experience,
@@ -82,4 +95,5 @@ export const collections = {
   certs: certs,
   socials: socials,
   skills: skills,
+  projects: projects,
 };

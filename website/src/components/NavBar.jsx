@@ -52,7 +52,12 @@ export default function NavBar({ socials }) {
               const IconComponent = iconMap[s.data.icon];
               return (
                 <NavbarItem key={s.id}>
-                  <Link href={s.data.link} isExternal aria-label={s.data.name}>
+                  <Link
+                    href={s.data.link}
+                    isExternal
+                    aria-label={s.data.name}
+                    color="foreground"
+                  >
                     <title>{s.data.name}</title>
                     <IconComponent />
                   </Link>

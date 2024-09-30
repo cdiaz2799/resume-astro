@@ -36,7 +36,7 @@ export default function CertCard({
 
           <CardFooter className="text-xs justify-center rounded-large bottom-1 flex flex-col items-center">
             {future && (
-              <Chip className="self-center" color="warning">
+              <Chip className="self-center" variant="shadow" color="primary">
                 In Progress
               </Chip>
             )}
