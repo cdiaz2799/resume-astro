@@ -5,9 +5,6 @@
     <h1 align="center">RESUME-ASTRO</h1>
 </p>
 <p align="center">
-    <em><code>❯ REPLACE-ME</code></em>
-</p>
-<p align="center">
 	<img src="https://img.shields.io/github/license/cdiaz2799/resume-astro?style=for-the-badge&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/cdiaz2799/resume-astro?style=for-the-badge&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/cdiaz2799/resume-astro?style=for-the-badge&color=0080ff" alt="repo-top-language">
@@ -31,18 +28,12 @@
 #####  Table of Contents
 
 - [ Overview](#-overview)
-- [ Features](#-features)
 - [ Repository Structure](#-repository-structure)
 - [ Modules](#-modules)
 - [ Getting Started](#-getting-started)
     - [ Prerequisites](#-prerequisites)
     - [ Installation](#-installation)
     - [ Usage](#-usage)
-    - [ Tests](#-tests)
-- [ Project Roadmap](#-project-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -50,12 +41,6 @@
 
 The Resume-Astro project is a digital resume that showcases a users bio, work experience, educational background, skill sets, and certifications in an interactive React-based website. It divides its functionality into infrastructure and website development.
 The infrastructure is managed by Pulumi, writted in TypeScript, while the website is built using the Astro.js framework, offering enhanced UX with dynamic, component-based structure and modern design elements. Additional frameworks used include [NextUI](https://nextui.org/) and [Magic UI](https://magicui.design/).
-
----
-
-##  Features
-
-<code>❯ REPLACE-ME</code>
 
 ---
 

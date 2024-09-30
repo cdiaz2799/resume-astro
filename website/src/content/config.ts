@@ -63,9 +63,11 @@ const skills = defineCollection({
     groups: z.array(
       z.object({
         name: z.string(),
+        icon: z.string().optional(),
         skills: z.array(
           z.object({
             name: z.string(),
+            icon: z.string().optional(),
           }),
         ),
       }),

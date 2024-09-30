@@ -1,43 +1,51 @@
 groups:
   - name: Cloud Infrastructure
+    icon: fa-solid fa-cloud
     skills:
       - name: Google Cloud Platform (GCP)
       - name: Microsoft Azure
       - name: Amazon Web Services (AWS)
       - name: DigitalOcean
   - name: Containers
+    icon: fa-brands fa-docker
     skills:
       - name: Kubernetes
       - name: Google Kubernetes Engine
       - name: Azure Kubernetes Service
       - name: Docker
   - name: Serverless
+    icon: fa-solid fa-bolt
     skills:
       - name: Azure Container Apps
       - name: GCP Cloud Run
       - name: AWS Fargate
   - name: IAM
+    icon: fa-solid fa-fingerprint
     skills:
       - name: Okta
       - name: Active Directory
   - name: Infrastructure-as-Code
+    icon: fa-solid fa-code
     skills:
       - name: Terraform
       - name: Pulumi
       - name: CloudFormation
       - name: Ansible
   - name: Languages
+    icon: fa-solid fa-code-branch
     skills:
       - name: Python
       - name: Bash/Shell
       - name: Powershell
       - name: TypeScript
   - name: CI/CD
+    icon: fa-solid fa-infinity
     skills:
       - name: GitHub Actions
       - name: Gitlab CI/CD
       - name: Jenkins
   - name: Observability
+    icon: fa-solid fa-magnifying-glass
     skills:
       - name: Grafana
       - name: Prometheus
