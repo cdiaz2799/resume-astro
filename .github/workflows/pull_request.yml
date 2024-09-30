@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ./infra/package.json
-      - run: npm ci
+      - run: npm install
       - name: Authenticate to Pulumi Cloud
         uses: pulumi/auth-actions@v1
         with:
