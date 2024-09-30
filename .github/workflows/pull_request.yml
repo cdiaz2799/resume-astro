@@ -1,0 +1,27 @@
+name: Pulumi
+on:
+  - pull_request
+  - workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ./infra/package.json
+      - run: npm ci
+      - name: Authenticate to Pulumi Cloud
+        uses: pulumi/auth-actions@v1
+        with:
+          organization: cdiaz3827
+          requested-token-type: urn:pulumi:token-type:access_token:organization
+      - uses: pulumi/actions@v5
+        with:
+          command: preview
+          stack-name: cdiaz3827/resume/prod
