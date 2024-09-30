@@ -48,7 +48,7 @@ const defaultBranch = new github.BranchDefault(
     repository: repo.name,
     branch: "main",
   },
-  { parent: repo },
+  { parent: repo }
 );
 
 const dependabot = new github.RepositoryDependabotSecurityUpdates(
@@ -57,7 +57,7 @@ const dependabot = new github.RepositoryDependabotSecurityUpdates(
     repository: repo.name,
     enabled: true,
   },
-  { parent: repo },
+  { parent: repo }
 );
 
 const environment = new github.RepositoryEnvironment(
@@ -67,18 +67,9 @@ const environment = new github.RepositoryEnvironment(
     environment: "cloudflare-pages",
     preventSelfReview: false,
   },
-  { parent: repo },
+  { parent: repo }
 );
 
-const environmentDeployment = new github.RepositoryDeploymentBranchPolicy(
-  "repo-deployment-branch-policy",
-  {
-    repository: repo.name,
-    environmentName: environment.environment,
-    name: defaultBranch.branch,
-  },
-  { parent: repo },
-);
 export const repositoryCloneUrl = repo.gitCloneUrl;
 export const repositorySSHUrl = repo.sshCloneUrl;
 
@@ -123,7 +114,7 @@ const pagesDomain = new cloudflare.PagesDomain(
     projectName: pages.name,
     domain: url,
   },
-  { parent: pages, deleteBeforeReplace: true },
+  { parent: pages, deleteBeforeReplace: true }
 );
 export const pagesDomainStatus = pagesDomain.status;
 
