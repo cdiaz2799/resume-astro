@@ -5,7 +5,7 @@ company: YAM Worldwide
 companyLogo: ./yam.png
 startDate: January 2019
 endDate: March 2021
-location: Scottsdale 2021
+location: Scottsdale
 summary: Supported a wide range of rapidly-growing businesses with break/fix, improvement, and consultation services
 ---
 

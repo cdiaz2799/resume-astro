@@ -21,14 +21,15 @@ export default function Experience({ workExperience }) {
             />
           }
           title={item.data.company}
-          subtitle={item.data.title}
+          subtitle={
+            item.data.title +
+            " | " +
+            item.data.startDate +
+            " - " +
+            item.data.endDate
+          }
         >
           <div className="flex min-h-0 flex-col gap-y-3">
-            <p>
-              <span>
-                {item.data.startDate} - {item.data.endDate}
-              </span>
-            </p>
             <p>{item.data.summary}</p>
           </div>
         </AccordionItem>
