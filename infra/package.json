@@ -2,7 +2,7 @@
   "name": "resume",
   "devDependencies": {
     "@types/node": "^18",
-    "typescript": "^5.0.0"
+    "typescript": "^5.6.3"
   },
   "dependencies": {
     "@pulumi/cloudflare": "^5.39.1",
