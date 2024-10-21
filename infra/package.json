@@ -7,6 +7,6 @@
   "dependencies": {
     "@pulumi/cloudflare": "^5.39.1",
     "@pulumi/github": "^6.3.0",
-    "@pulumi/pulumi": "^3.113.0"
+    "@pulumi/pulumi": "^3.137.0"
   }
 }
